@@ -1,4 +1,5 @@
 /** @type {import('tailwindcss').Config} */
+const plugin = require('tailwindcss/plugin')
 module.exports = {
   content: [
     // "./pages/**/*.{js,ts,jsx,tsx}",
@@ -29,7 +30,16 @@ module.exports = {
           932:"#000000"
         }
       },
+      fontSize:{
+        sm:'12px',
+        xl:'15px',
+        base:'18px'
+      }
     },
   },
-  plugins: [],
+  plugins: [
+    plugin(function({ addUtilities, addComponents, e, config }) {
+      // Add your custom styles here
+    }),
+  ],
 }
